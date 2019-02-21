@@ -1,9 +1,8 @@
-Intalação Kivy:
+INSTALAÇÃO KIVY
 
 
 
-
-Windows:
+:::::::::::::::: WINDOWS ::::::::::::::::
 
 passo 1 :
 python -m pip install --upgrade pip wheel setuptools
