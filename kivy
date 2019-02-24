@@ -1,32 +1,102 @@
-INSTALAÇÃO KIVY
+---------------------------------
+|   INSTALAÇÃO KIVY             |
+|   https://kivy.org/#download  |
+---------------------------------
 
+  :::::::::::::::: WINDOWS ::::::::::::::::
+  passo 1 :
+    python -m pip install --upgrade pip wheel setuptools
 
+  passo 2:
+    python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
 
-:::::::::::::::: WINDOWS ::::::::::::::::
+  passo 3:
+    python -m pip install kivy.deps.gstreamer
 
-passo 1 :
-python -m pip install --upgrade pip wheel setuptools
+  passo 4:
+    python -m pip install kivy.deps.angle
 
+  passo 5: "INSTALAÇÃO DO KIVY"
+    python -m pip install kivy
 
-passo 2:
-python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+  passo 6: "EXEMPLOS"
+    python -m pip install kivy_examples
 
+  passo 7: "TESTAR DEMO"
+    python \Users\Aluno\AppData\Local\Programs\Python\Python37-32\share\kivy-examples\demo\showcase\main.py
 
-passo 3:
-python -m pip install kivy.deps.gstreamer
+  :::::::::::::::: UTILIZANDO O ANACONDA ::::::::::::::::
+  passo 1:
+    conda install kivy -c conda-forge
+    
+------------------------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------
+|    INSTALAÇÃO do BUILDOZER: Utilizado Para gerar um APK   |
+|    https://github.com/kivy/buildozer                      |
+-------------------------------------------------------------
 
-passo 4:
-python -m pip install kivy.deps.angle
+  :::::::::::::::: WINDOWS ::::::::::::::::
+  Passo 1: Baixar Virtual Machine (for Android/buildozer)
+    http://txzone.net/files/torrents/kivy-buildozer-vm-2.0.zip
+  
+  Passo 2: Instalar o VirtualBox
+    https://www.virtualbox.org/
+  
+  Passo 3: Importar a Máquina Vistual do passo 1 para o VirtualBox
+    Clica no menu: 
+    File >> 
+    Import Appliance >>
+    Seleciona o arquivo da Máquina Virtual: "Buildozer VM.ovf"
 
+  Passo 4: Comptartilhar pasta da Máquina Virtual com a Máquina Local
+    Clica com o botão direito na Máquina Virtual
+    Settings >>
+    Shared Folders >>
+    Adiconar uma pasta
+    Marcar as opções "Read-only" e "Auto-mount"
 
-passo 5: "INSTALAÇÃO DO KIVY"
-python -m pip install kivy
+  Passo 5: Senha da Máquina Virtual
+    "kivy" minúsculo
+  
+  Passo 6: Acessar pasta compartilhada na Máquina Máquina Virtual
+    Copiar códigos do app
 
+  Passo 7: Acessar pasta do projeto na Máquina Máquina Virtual para gerar aquivo spec, onde vai informar todas as especificações do app
+    buildozer init
 
-passo 6: "EXEMPLOS"
-python -m pip install kivy_examples
+  Passo 8: Gerrar app
+    "buildozer -v android debug" ou "buildozer -v android release"
+    
+  Passo 9: Inserir celular no Virtual Box
+    Devices >>
+    USB >>
+    Seleciona o celular
+    Confirma no Aparelho a inclusão no Virtual Box "Atenção: celular no modo desenvolvedor, marcado a opção debug com usb"
 
+  Passo 10: Transferir app
+    "buildozer -v android debug deploy run" ou "buildozer -v android release deploy run"
+    
+  Passo 11: para fazer debug
+    buildozer android logcat | grep python
+    "Atenção: se tiver problema com o teclado para digitar "|" digite o comando no terminal para adequar o teclado para BR "setxkbmap BR"
+    
+  :::::::::::::::: LINUX / MACOS ::::::::::::::::
 
-passo 7: "TESTAR DEMO"
-python \Users\Aluno\AppData\Local\Programs\Python\Python37-32\share\kivy-examples\demo\showcase\main.py
+  Passo 1:
+    sudo pip install buildozer
+    
+  Passo 2: Acessar pasta do projeto para gerar aquivo spec, onde vai informar todas as especificações do app
+    buildozer init
+       
+  Passo 3: Gerrar app
+    "buildozer -v android debug" ou "buildozer -v android release"
+    
+  Passo 3: Transferrir app
+    "buildozer -v android debug deploy run" ou "buildozer -v android release deploy run"
+    
+  Passo 4: para fazer debug
+    buildozer android logcat | grep python
+    "Atenção: se tiver problema com o teclado para digitar "|" digite o comando no terminal para adequar o teclado para BR "setxkbmap BR"
+
+  
